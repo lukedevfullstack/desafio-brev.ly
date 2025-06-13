@@ -1,0 +1,29 @@
+name: desafio-brev-ly-base
+
+services:
+  db:
+    container_name: brev-ly-db
+    image: bitnami/postgresql:latest
+    restart: unless-stopped
+    ports:
+      - $POSTGRESQL_PORT:5432
+    environment:
+      - POSTGRESQL_USERNAME=$POSTGRESQL_USERNAME
+      - POSTGRESQL_PASSWORD=$POSTGRESQL_PASSWORD
+      - POSTGRESQL_DATABASE=$POSTGRESQL_DATABASE
+    volumes:
+      - ./docker:/docker-entrypoint-initdb.d
+      - db-volume:/bitnami/postgresql
+    networks:
+      - db-network
+      - app-network
+
+volumes:
+  db-volume:
+    driver: local
+
+networks:
+  db-network:
+    driver: bridge
+  app-network:
+    driver: bridge

@@ -1,0 +1,28 @@
+# dependencies
+node_modules
+
+# build
+dist
+build
+
+# logs
+*.log
+
+# Git
+.git
+.gitignore
+
+# docker files
+Dockerfile
+docker-compose.yml
+
+# environment variables
+.env
+.env.*
+
+# IDE
+.vscode
+
+# macOS
+.DS_Store
+
