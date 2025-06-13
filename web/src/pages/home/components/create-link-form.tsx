@@ -67,7 +67,7 @@ export function CreateLinkForm() {
         disabled={isCreatingLink}
       >
         <Button.Label className="text-md text-white">
-          {isCreatingLink ? 'Salvando...' : 'Salvar link'}
+          {isCreatingLink ? 'Salvando link...' : 'Salvar link'}
         </Button.Label>
       </Button.Root>
     </form>

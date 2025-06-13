@@ -64,11 +64,11 @@ export function ShortLinkProvider({ children }: ShortLinkProviderProps) {
       if (error instanceof AxiosError) {
         if (error.response?.status === 409) {
           toast.error('Erro ao criar o link encurtado.', {
-            description: 'Esse link encurtado já existe.',
+            description: 'Esse link encurtado já existe!',
           })
         } else {
           toast.error('Erro ao criar o link encurtado.', {
-            description: 'Tente novamente mais tarde.',
+            description: 'Tente novamente mais tarde...',
           })
         }
       }
@@ -87,7 +87,7 @@ export function ShortLinkProvider({ children }: ShortLinkProviderProps) {
     } catch (error) {
       console.error('Error fetching links:', error)
       toast.error('Erro ao buscar os links', {
-        description: 'Tente novamente mais tarde.',
+        description: 'Tente novamente mais tarde...',
       })
     } finally {
       setIsFetchingLinks(false)
@@ -114,7 +114,7 @@ export function ShortLinkProvider({ children }: ShortLinkProviderProps) {
     } catch (error) {
       console.error('Error deleting link:', error)
       toast.error('Erro ao excluir o link encurtado.', {
-        description: 'Tente novamente mais tarde.',
+        description: 'Tente novamente mais tarde...',
       })
     } finally {
       setIsDeletingLink(false)
@@ -143,7 +143,7 @@ export function ShortLinkProvider({ children }: ShortLinkProviderProps) {
     } catch (error) {
       console.error('Error exporting links to CSV:', error)
       toast.error('Erro ao exportar os links para CSV.', {
-        description: 'Tente novamente mais tarde.',
+        description: 'Tente novamente mais tarde...',
       })
     } finally {
       setIsExportingLinks(false)
